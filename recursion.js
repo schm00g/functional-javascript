@@ -23,9 +23,24 @@ function makeTree(categories, parent){
     let node = {}
     categories
         .filter(c => c.parent === parent)
-        .forEach(c => node[c.id] = 
-            makeTree(categories, c.id))
+        .forEach(c => 
+            node[c.id] = makeTree(categories, c.id))
     return node
 }
 
-console.log(makeTree(categories, null));
+console.log(JSON.stringify(makeTree(categories, null), null, 2));
+
+// {
+//     "animals": {
+//       "mammals": {
+//         "cats": {
+//           "persian": {},
+//           "siamese": {}
+//         },
+//         "dogs": {
+//           "chihuahua": {},
+//           "labrador": {}
+//         }
+//       }
+//     }
+// }
