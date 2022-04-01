@@ -23,3 +23,5 @@ let echoData = function(data){
         }, 2000);
     });
 };
+
+fetchData().then(parseData).then(echoData);
