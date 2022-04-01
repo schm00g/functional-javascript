@@ -15,3 +15,11 @@ let parseData = function(data){
         });
     })
 }
+
+let echoData = function(data){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(data.parsed);
+        }, 2000);
+    });
+};
